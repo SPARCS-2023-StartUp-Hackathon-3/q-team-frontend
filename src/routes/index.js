@@ -14,8 +14,8 @@ const MainRoutes = () => {
     // 로그인 되었을 때 -> 로그인, 회원가입, 렌딩페이지 접근 불가
     if (
       cookies.loginkey &&
-      (location.pathname === "login" ||
-        location.pathname === "signup" ||
+      (location.pathname === "/login" ||
+        location.pathname === "/login/signup" ||
         location.pathname === "/")
     ) {
       navigate("/main");
@@ -24,7 +24,7 @@ const MainRoutes = () => {
     else if (
       cookies.loginkey === undefined &&
       location.pathname !== "/login" &&
-      location.pathname !== "/signup" &&
+      location.pathname !== "/login/signup" &&
       location.pathname !== "/"
     ) {
       console.log(cookies.loginkey);
@@ -39,8 +39,7 @@ const MainRoutes = () => {
       <Route path="/" element={<Onboarding />} />
       <Route path="/main" element={<Main />} />
       <Route path="/mypage" element={<MyPage />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/signup" element={<SignUp />} />
+      <Route path="/login/*" element={<Sign />} />
       <Route path="/*" element={<NotFound />} />
     </Routes>
   );
