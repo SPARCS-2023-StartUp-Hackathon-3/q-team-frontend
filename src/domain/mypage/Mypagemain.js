@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
+import { Mypagemainform } from '../../components/mypage';
 
 const Mypagemain = () => {
-  return (
-    <div>Mypagemain</div>
-  )
-}
-
+    return (
+        <Mypagemainform/>
+    )
+};
+  
 export default Mypagemain;

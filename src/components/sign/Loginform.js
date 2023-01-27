@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Loginform() {
+const Loginform = () => {
   return (
     <div>Loginform</div>
   )
