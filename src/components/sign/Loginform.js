@@ -37,7 +37,7 @@ const Loginform = (props) => {
         />
 
         <Button color='warning' className='login_button' variant="outlined" disabled={props.login.email && props.login.password ?false:true} onClick={props.handleClickLogin}>로그인</Button>
-        <p>아직 회원이 아니신가요? <Link onClick={()=>{navigate('/signup')}}>회원가입</Link></p>
+        <p>아직 회원이 아니신가요? <Link onClick={()=>{navigate('/login/signup')}}>회원가입</Link></p>
         </Grid>
     </Grid>
     </ThemeProvider>
