@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Mypagemain() {
+const Mypagemain = () => {
   return (
     <div>Mypagemain</div>
   )
 }
 
-export default Mypagemain
+export default Mypagemain;
