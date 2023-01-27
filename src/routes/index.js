@@ -1,8 +1,9 @@
 import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
-import { Main, MyPage } from "./pages";
+import { Main, MyPage, Onboarding, SignUp } from "./pages";
 import NotFound from "./NotFound";
 import { useEffect } from "react";
-import { useCookies } from 'react-cookie';
+import { useCookies } from "react-cookie";
+import Login from "./pages/Login/Login";
 
 const MainRoutes = () => {
   const [cookies] = useCookies(["loginkey"]);
@@ -10,21 +11,37 @@ const MainRoutes = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if(cookies.loginkey === undefined ){
-        navigate("/login");
-      } else if ( cookies.loginkey ){
-        navigate("/main");
-      } else {
-        console.log("correct routes");
-      }
+    // 로그인 되었을 때 -> 로그인, 회원가입, 렌딩페이지 접근 불가
+    if (
+      cookies.loginkey &&
+      (location.pathname === "login" ||
+        location.pathname === "signup" ||
+        location.pathname === "/")
+    ) {
+      navigate("/main");
+    }
+    // 로그인 안 되었을 때 -> 로그인, 회원가입, 렌딩 페이지만 접근 가능
+    else if (
+      cookies.loginkey === undefined &&
+      location.pathname !== "/login" &&
+      location.pathname !== "/signup" &&
+      location.pathname !== "/"
+    ) {
+      console.log(cookies.loginkey);
+      navigate("/login");
+    } else {
+      console.log("correct routes");
+    }
   }, [cookies.sessionKey, location.pathname]);
-
 
   return (
     <Routes>
-      <Route path="/" element={<Main />}></Route>
-      <Route path="/mypage" element={<MyPage />}></Route>
-      <Route path="/*" element={<NotFound />}></Route>
+      <Route path="/" element={<Onboarding />} />
+      <Route path="/main" element={<Main />} />
+      <Route path="/mypage" element={<MyPage />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<SignUp />} />
+      <Route path="/*" element={<NotFound />} />
     </Routes>
   );
 };
