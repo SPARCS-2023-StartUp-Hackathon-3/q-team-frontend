@@ -4,12 +4,33 @@ body {
   overflow: overlay;
 }
 
+/* sign */
+.sign_background {
+  min-height: 100vh;
+  background-color: azure;
+}
+.sign_container {
+  min-height: 700px;
+  background-color: gainsboro;
+  border-radius: 20px;
+  box-shadow: 0px 6px 15.8px rgba(75, 75, 75, 0.23); 
+}
+.sign_info {
+  margin-top: 100px;
+  margin-left: 30px;
+  font-size: 25px;
+  font-weight: bold;
+}
+.sign_info > div {
+  margin-top: 60px;
+}
 
  /* login */
  .login_div { 
-  border-top: 8px solid #D34658; 
+  border-top: 8px solid #D34658;
+  border-radius: 20px;
+  background-color: white; 
   box-shadow: 0px 6px 15.8px rgba(75, 75, 75, 0.23); 
-  margin-top: 80px; 
   min-height: 700px; 
   text-align: center; 
   padding-top: 50px; 
@@ -41,8 +62,9 @@ body {
 /* signup */
 .signup_div { 
   border-top: 8px solid #D34658; 
+  border-radius: 20px;
+  background-color: white; 
   box-shadow: 0px 6px 15.8px rgba(75, 75, 75, 0.23); 
-  margin-top: 80px; 
   min-height: 700px; 
   text-align: center; 
   padding-top: 50px; 
