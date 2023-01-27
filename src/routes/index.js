@@ -2,6 +2,7 @@ import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import { Main, MyPage } from "./pages";
 import NotFound from "./NotFound";
 import { useEffect } from "react";
+import { useCookies } from 'react-cookie';
 
 const MainRoutes = () => {
   const [cookies] = useCookies(["loginkey"]);
