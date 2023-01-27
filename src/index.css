@@ -1,13 +1,69 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* font-family: 'Nanum Gothic', sans-serif; */
+  overflow: overlay;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+ /* login */
+ .login_div { 
+  border-top: 8px solid #D34658; 
+  box-shadow: 0px 6px 15.8px rgba(75, 75, 75, 0.23); 
+  margin-top: 80px; 
+  min-height: 700px; 
+  text-align: center; 
+  padding-top: 50px; 
+  padding-bottom: 50px;
 }
+.login_div > img { width: 120px; }
+.login_div > h1 { font-size: 28px; margin-top: 32px; margin-bottom: 72px; }
+.login_div > p { font-size: 15px; margin-top: 32px; margin-bottom: 24px; }
+.login_div > input { 
+  font-size: 14px;
+  width: 70%; 
+  height: 45px;
+  box-sizing: border-box; 
+  margin-bottom: 16px; 
+  padding-left: 10px;
+  border: 1px #DADADA solid; 
+  border-radius: 4px;
+}
+.login_div > input:focus {outline: 2px solid #D34658;}
+.login_button { 
+  width: 70%; 
+  height: 45px;
+  border-radius: 4px;
+  margin-top: 16px;
+}
+.login_div a { text-decoration: none; color: #D34658; font-weight: 600;}
+.login_div a:hover { text-decoration: underline; color: #D34658; cursor: pointer; }
+
+/* signup */
+.signup_div { 
+  border-top: 8px solid #D34658; 
+  box-shadow: 0px 6px 15.8px rgba(75, 75, 75, 0.23); 
+  margin-top: 80px; 
+  min-height: 700px; 
+  text-align: center; 
+  padding-top: 50px; 
+  padding-bottom: 50px;
+}
+.signup_input > input {
+  height: 15px;
+  font-size: 14px;
+}
+
+.signup_div > img { width: 120px; }
+.signup_div > h1 { font-size: 28px; margin-top: 32px; margin-bottom: 16px; }
+.signup_div > button { 
+  width: 70%; 
+  height: 45px;
+  color: #D34658;
+  background-color: #FFFFFF;
+  border: 1px #D34658 solid;
+  border-radius: 4px;
+  margin-top: 16px;
+
+}
+.signup_div a { text-decoration: none; color: #D34658; font-weight: 600;}
+.signup_div a:hover { text-decoration: underline; color: #D34658; cursor: pointer; }
