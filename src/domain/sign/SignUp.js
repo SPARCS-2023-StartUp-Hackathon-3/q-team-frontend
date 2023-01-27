@@ -31,8 +31,8 @@ const Signup = () => {
             password: signup.password,
         }
     })
-    .then((response)=>{
-        console.log(response);
+    .then((res)=>{
+        console.log(res);
         setCookie("loginkey", res.data.Id, { path: '/' });   //res.data.Id
         navigate('/');
     }).catch((Error)=>{

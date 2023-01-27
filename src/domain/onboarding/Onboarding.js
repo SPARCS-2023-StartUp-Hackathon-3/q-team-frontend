@@ -1,10 +1,10 @@
 import React from 'react';
 import { Onboardingform } from '../../components/onboarding';
 
-const Mypagemain = () => {
-    return (
-      <Mypagemainform/>
-    )
-  }
-  
-  export default Mypagemain;
+const Onboarding = () => {
+  return (
+    <Onboardingform/>
+  )
+};
+
+export default Onboarding;

@@ -1,9 +1,8 @@
 import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
-import { Main, MyPage, Onboarding, SignUp } from "./pages";
+import { Main, MyPage, Onboarding, Sign } from "./pages";
 import NotFound from "./NotFound";
 import { useEffect } from "react";
 import { useCookies } from "react-cookie";
-import Login from "./pages/Login/Login";
 
 const MainRoutes = () => {
   const [cookies] = useCookies(["loginkey"]);

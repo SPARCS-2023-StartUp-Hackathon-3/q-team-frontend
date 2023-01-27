@@ -39,7 +39,7 @@ const Signupform = (props) => {
     <ThemeProvider theme={theme}>
       <Grid container justifyContent='center'>
         <Grid xs={12} sm={9} md={6} lg={4.8} xl={3.5} className='signup_div'>
-          <img src={logo} alt='logo' />
+          {/* <img src={logo} alt='logo' /> */}
           <h1>회원가입</h1>
 
           <FormControl sx={{ width: '75%', marginRight: '0%', marginBottom: '16px' }}>
@@ -61,7 +61,7 @@ const Signupform = (props) => {
               sx={{ height: '48px' }}
               color='warning'
               label='비밀번호'
-              type={showPassword ? 'text' : 'password'}
+              type='password'
               name='password'
               placeholder='비밀번호를 입력해 주세요'
               value={props.signup.password}
@@ -74,7 +74,7 @@ const Signupform = (props) => {
               sx={{ height: '48px' }}
               color='warning'
               label='비밀번호 확인'
-              type={showPasswordCheck ? 'text' : 'password'}
+              type='password'
               name='passwordCheck'
               placeholder='비밀번호를 한번 더 입력해 주세요'
               value={props.signup.passwordCheck}

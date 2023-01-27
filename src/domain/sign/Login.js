@@ -1,6 +1,9 @@
-import React from 'react';
+import React,{ useState } from 'react';
 import { useSnackbar } from 'notistack';
 import { Loginform } from '../../components/sign';
+import { useCookies } from 'react-cookie';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const Login = () => {
   const { enqueueSnackbar } = useSnackbar();
@@ -26,8 +29,8 @@ const Login = () => {
             password: login.password,
         }
     })
-    .then((response)=>{
-        console.log(response);
+    .then((res)=>{
+        console.log(res);
         if (res.data.login === false) {
             enqueueSnackbar(`아이디/비밀번호를 다시 확인해주세요`, { variant: 'error' });
         }
