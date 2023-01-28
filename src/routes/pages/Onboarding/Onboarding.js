@@ -1,11 +1,12 @@
 import React from "react";
-import { Onboardingform } from "../../../components/onboarding";
+import { Routes, Route } from 'react-router-dom';
+import { OnboardingContainer } from "domain/onboarding";
 
 const OnBoarding = () => {
   return (
-    <div>
-      <Onboardingform />
-    </div>
+    <Routes>
+      <Route path = "/" element={<OnboardingContainer/>}/>
+    </Routes>
   );
 };
 

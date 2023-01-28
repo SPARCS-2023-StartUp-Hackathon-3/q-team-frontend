@@ -1,11 +1,11 @@
 import React from "react";
 import { Routes, Route } from 'react-router-dom';
-import { Mainpage } from 'domain/main';
+import { MainContainer } from 'domain/main';
 
 const Main = () => {
   return (
     <Routes>
-      <Route path = "/" element={<Mainpage/>}/>
+      <Route path = "/" element={<MainContainer/>}/>
     </Routes>
   );
 };

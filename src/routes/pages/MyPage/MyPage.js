@@ -1,11 +1,11 @@
-import Mypagemain from "domain/mypage/Mypagemain";
 import React from "react";
 import { Routes, Route } from 'react-router-dom';
+import { MypageContainer } from "domain/mypage";
 
 const MyPage = () => {
   return (    
   <Routes>
-    <Route path = "/" element={<Mypagemain/>}/>
+    <Route path = "/" element={<MypageContainer/>}/>
   </Routes>
   );
 };
