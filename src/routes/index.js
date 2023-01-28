@@ -9,36 +9,36 @@ const MainRoutes = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  useEffect(() => {
-    // 로그인 되었을 때 -> 로그인, 회원가입, 렌딩페이지 접근 불가
-    if (
-      cookies.loginkey &&
-      (location.pathname === "/login" ||
-        location.pathname === "/login/signup" ||
-        location.pathname === "/")
-    ) {
-      navigate("/main");
-    }
-    // 로그인 안 되었을 때 -> 로그인, 회원가입, 렌딩 페이지만 접근 가능
-    else if (
-      cookies.loginkey === undefined &&
-      location.pathname !== "/login" &&
-      location.pathname !== "/login/signup" &&
-      location.pathname !== "/" &&
-      location.pathname !== "/redirect"
-    ) {
-      console.log(cookies.loginkey);
-      navigate("/login");
-    } else {
-      console.log("correct routes");
-    }
-  }, [cookies.sessionKey, location.pathname]);
+  // useEffect(() => {
+  //   // 로그인 되었을 때 -> 로그인, 회원가입, 렌딩페이지 접근 불가
+  //   if (
+  //     cookies.loginkey &&
+  //     (location.pathname === "/login" ||
+  //       location.pathname === "/login/signup" ||
+  //       location.pathname === "/")
+  //   ) {
+  //     navigate("/main");
+  //   }
+  //   // 로그인 안 되었을 때 -> 로그인, 회원가입, 렌딩 페이지만 접근 가능
+  //   else if (
+  //     cookies.loginkey === undefined &&
+  //     location.pathname !== "/login" &&
+  //     location.pathname !== "/login/signup" &&
+  //     location.pathname !== "/" &&
+  //     location.pathname !== "/redirect"
+  //   ) {
+  //     console.log(cookies.loginkey);
+  //     navigate("/login");
+  //   } else {
+  //     console.log("correct routes");
+  //   }
+  // }, [cookies.sessionKey, location.pathname]);
 
   return (
     <Routes>
       <Route path="/" element={<Onboarding />} />
-      <Route path="/main" element={<Main />} />
-      <Route path="/mypage" element={<MyPage />} />
+      <Route path="/main/*" element={<Main />} />
+      <Route path="/mypage/*" element={<MyPage />} />
       <Route path="/login/*" element={<Sign />} />
       <Route path="/redirect" element={<Redirect />} />
       <Route path="/*" element={<NotFound />} />

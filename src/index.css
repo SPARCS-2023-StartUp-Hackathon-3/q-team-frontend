@@ -208,3 +208,32 @@ body {
 .css-iyx866-MuiSlider-root {
   height: 8px !important;
 }
+
+/* menu */
+.menubox{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  width: 90%;
+}
+.menubox:hover{
+  box-shadow: 0px 3px 5px rgba(75, 75, 75, 0.23);
+}
+.colored_menubox{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+  background-color: #DBDFFD;
+  border-radius: 10px;
+  width: 90%;
+}
+.colored_menubox:hover{
+  box-shadow: 0px 3px 5px rgba(75, 75, 75, 0.23);
+}
+.menudivider{
+  margin: 10px !important;
+}
