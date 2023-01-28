@@ -19,8 +19,8 @@ const MainRoutes = () => {
   useEffect(() => {
     console.log(location.pathname);
 
-    // 카카오 로그인 로직
-    console.log(new URLSearchParams(location.search).get("code").substr(1));
+    // // 카카오 로그인 로직
+    // console.log(new URLSearchParams(location.search).get("code").substr(1));
 
     // 로그인 되었을 때 -> 로그인, 회원가입, 렌딩페이지 접근 불가
     if (
