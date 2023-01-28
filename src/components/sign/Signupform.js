@@ -44,7 +44,7 @@ const Signupform = (props) => {
                     {/* <img src={logo} alt='logo' /> */}
                     <h1>회원가입</h1>
 
-                    <FormControl sx={{ width: '75%', marginRight: '0%', marginBottom: '16px' }}>
+                    <FormControl sx={{ width: '70%', marginRight: '0%', marginBottom: '16px' }}>
                         <InputLabel shrink>이메일</InputLabel>
                         <OutlinedInput className='signup_input'
                         sx={{ height: '48px' }}
@@ -57,7 +57,7 @@ const Signupform = (props) => {
                         onChange={props.handleChangeSignup}
                         />
                     </FormControl>
-                    <FormControl sx={{ width: '75%', marginRight: '0%', marginBottom: '16px' }}>
+                    <FormControl sx={{ width: '70%', marginRight: '0%', marginBottom: '20px' }}>
                         <InputLabel shrink>비밀번호</InputLabel>
                         <OutlinedInput className='signup_input'
                         sx={{ height: '48px' }}
@@ -70,7 +70,7 @@ const Signupform = (props) => {
                         onChange={props.handleChangeSignup}
                         />
                     </FormControl>
-                    <FormControl sx={{ width: '75%', marginRight: '0%', marginBottom: '16px' }}>
+                    <FormControl sx={{ width: '70%', marginRight: '0%', marginBottom: '20px' }}>
                         <InputLabel shrink>비밀번호 확인</InputLabel>
                         <OutlinedInput className='signup_input'
                         sx={{ height: '48px' }}
@@ -84,7 +84,7 @@ const Signupform = (props) => {
                         />
                     </FormControl>
 
-                    <FormControl sx={{ width: '75%', marginRight: '0%', marginBottom: '16px' }}>
+                    <FormControl sx={{ width: '70%', marginRight: '0%', marginBottom: '20px' }}>
                         <InputLabel shrink>닉네임</InputLabel>
                         <OutlinedInput className='signup_input'
                         sx={{ height: '48px' }}
@@ -98,7 +98,7 @@ const Signupform = (props) => {
                         />
                     </FormControl>
 
-                    <Button color='warning' variant="outlined" disabled={props.state} onClick={props.handleClickSignUp}>회원가입</Button>
+                    <Button color='warning' variant="outlined" disabled={props.signup.email && props.signup.nickname && props.signup.password && props.signup.passwordCheck ?false:true} onClick={props.handleClickSignUp}>회원가입</Button>
                 </Grid>
             </Grid>
             <Grid item xs={12} sm={6} md={6} lg={7} xl={8} justifyContent='center' alignItems='center'>
