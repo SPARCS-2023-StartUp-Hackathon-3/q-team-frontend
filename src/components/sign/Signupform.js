@@ -38,8 +38,8 @@ const Signupform = (props) => {
   return (
     <ThemeProvider theme={theme}>
       <Grid container className='sign_background' justifyContent='center' alignItems='center'>
-        <Grid item container className='sign_container' xs={12} sm={10} md={9} lg={8} xl={8}>
-            <Grid item xs={12} sm={6} md={5} lg={4} xl={4}>
+        <Grid item container className='sign_container' xs={12} sm={10} md={10} lg={9} xl={8}>
+            <Grid item xs={12} sm={6} md={6} lg={5} xl={4}>
                 <Grid className='signup_div'>
                     {/* <img src={logo} alt='logo' /> */}
                     <h1>회원가입</h1>
@@ -99,19 +99,17 @@ const Signupform = (props) => {
                     </FormControl>
 
                     <Button color='warning' variant="outlined" disabled={props.state} onClick={props.handleClickSignUp}>회원가입</Button>
-                    </Grid>
+                </Grid>
             </Grid>
-            <Grid item xs={12} sm={6} md={7} lg={8} xl={8} justifyContent='center' alignItems='center'>
+            <Grid item xs={12} sm={6} md={6} lg={7} xl={8} justifyContent='center' alignItems='center'>
                 <Grid className='sign_info'>
-                    <div>Upload and share your music</div>
-                    <div>Follow your favorite artists</div>
-                    <div>Create and publish playlists</div>
-                    <div>And much more</div>
+                    <h3>Upload and share your music</h3>
+                    <h3>Follow your favorite artists</h3>
+                    <h3>Create and publish playlists</h3>
+                    <h3>And much more</h3>
                 </Grid>
             </Grid>
         </Grid>
-
-        
       </Grid>
     </ThemeProvider>
   )
