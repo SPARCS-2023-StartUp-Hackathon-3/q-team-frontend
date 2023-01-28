@@ -1,3 +1,4 @@
-import Sign from "./Sign";
+// export { default as SignContainer } from './SignContainer';
+import SignContainer from "./SignContainer";
 
-export default Sign;
+export default SignContainer;

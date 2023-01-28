@@ -1,1 +1,2 @@
-export { default as MyPageMain } from './Mypagemain';
+export { default as MyFeed } from './MyFeed';
+export { default as Playlist } from './Playlist';

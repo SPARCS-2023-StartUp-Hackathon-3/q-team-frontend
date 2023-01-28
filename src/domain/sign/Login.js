@@ -4,7 +4,7 @@ import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Loginform } from "components/sign";
-import { Playbar, Topbar } from "components/layout";
+
 require("dotenv").config();
 
 const Login = () => {
@@ -48,15 +48,11 @@ const Login = () => {
   };
 
   return (
-    <>
-      <Topbar />
-      <Loginform
-        login={login}
-        handleChangeLogin={handleChangeLogin}
-        handleClickLogin={handleClickLogin}
-      />
-      <Playbar />
-    </>
+    <Loginform
+      login={login}
+      handleChangeLogin={handleChangeLogin}
+      handleClickLogin={handleClickLogin}
+    />
   );
 };
 

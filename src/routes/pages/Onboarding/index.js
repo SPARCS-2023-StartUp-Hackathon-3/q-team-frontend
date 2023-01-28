@@ -1,3 +1,4 @@
-import Onboarding from "./Onboarding";
+// export { default as OnboardingContainer } from './OnboardingContainer';
+import OnboardingContainer from "./OnboardingContainer";
 
-export default Onboarding;
+export default OnboardingContainer;

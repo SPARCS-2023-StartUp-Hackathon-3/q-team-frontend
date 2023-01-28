@@ -68,7 +68,7 @@ const Topbar = () => {
   };
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ width: "100%" }}>
       <AppBar className="topbar" color="Primary1" position="static">
         <Toolbar>
           <img
