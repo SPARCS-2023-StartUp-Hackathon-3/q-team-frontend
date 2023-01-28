@@ -1,13 +1,10 @@
 import React, { useState } from "react";
 import logo from "img/logo.png";
 import {
-  Avatar,
-  Grid,
   Box,
   AppBar,
   Toolbar,
   IconButton,
-  Typography,
   InputBase,
   Badge,
   Menu,
@@ -23,6 +20,7 @@ import {
 import SearchIcon from "@mui/icons-material/Search";
 import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
+import axios from "axios";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -75,7 +73,10 @@ const Topbar = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
-  const handleClickLogout = () => {
+  const handleClickLogout = async () => {
+    (async () => {
+      axios.post(`${process.env.REACT_APP_SERVER}/api/auth/logout`);
+    })();
     removeCookie("loginkey", { path: "/" });
     navigate("/");
   };
