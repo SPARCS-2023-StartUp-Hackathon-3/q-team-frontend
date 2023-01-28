@@ -6,7 +6,6 @@ import { AccountCircle, Mail, Notifications, MoreVert } from '@mui/icons-materia
 import SearchIcon from '@mui/icons-material/Search';
 import { useNavigate } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
- 
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',

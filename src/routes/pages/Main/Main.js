@@ -1,12 +1,12 @@
-import { Mainform } from "components/main";
-
 import React from "react";
+import { Routes, Route } from 'react-router-dom';
+import { Mainpage } from 'domain/main';
 
 const Main = () => {
   return (
-    <div>
-      <Mainform />
-    </div>
+    <Routes>
+      <Route path = "/" element={<Mainpage/>}/>
+    </Routes>
   );
 };
 

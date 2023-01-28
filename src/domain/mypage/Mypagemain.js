@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mypagemainform } from '../../components/mypage';
+import { Mypagemainform } from '../../components/myPage';
 
 const Mypagemain = () => {
     return (

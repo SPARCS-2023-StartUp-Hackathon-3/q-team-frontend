@@ -39,8 +39,8 @@ const Playbar = () => {
                 <div style={{fontWeight: "bold", marginBottom: "10px"}}>Song Title</div>
                 <div>Artist Name</div>                
             </Grid>
-            <Grid item xs={2} md={2} xl={2}>
-                <img src={icon_Heart} alt="icon_Heart" style={{height: "60%"}}/>
+            <Grid item xs={2} md={2} xl={2} sx={{ display: "flex", alignItems: "center", justifyContent: "left" }}>
+                <img src={icon_Heart} alt="icon_Heart" style={{height: "30%"}}/>
             </Grid>
         </Grid>
         <Grid item container xs={6} md={6} xl={6}>
