@@ -5,18 +5,10 @@ import { useNavigate } from "react-router-dom";
 import KakaoLogo from "img/kakao_logo.png";
 require("dotenv").config();
 
-const theme = createTheme({
-  palette: {
-    secondary: { main: "#A4A4A4" },
-    warning: { main: "#D34658" },
-  },
-});
-
 const Loginform = (props) => {
   const navigate = useNavigate();
 
   return (
-    <ThemeProvider theme={theme}>
       <Grid
         container
         className="sign_background"
@@ -52,9 +44,9 @@ const Loginform = (props) => {
                 onChange={props.handleChangeLogin}
               />
               <Button
-                color="warning"
+                color="Primary4"
                 className="login_button"
-                variant="outlined"
+                variant="contained"
                 disabled={
                   props.login.email && props.login.password ? false : true
                 }
@@ -83,16 +75,7 @@ const Loginform = (props) => {
               </p>
             </Grid>
           </Grid>
-          <Grid
-            item
-            xs={12}
-            sm={6}
-            md={6}
-            lg={7}
-            xl={8}
-            justifyContent="center"
-            alignItems="center"
-          >
+          <Grid item xs={12} sm={6} md={6} lg={7} xl={8} justifyContent="center" alignItems="center">
             <Grid className="sign_info">
               <h3>Upload and share your music</h3>
               <h3>Follow your favorite artists</h3>
@@ -102,7 +85,6 @@ const Loginform = (props) => {
           </Grid>
         </Grid>
       </Grid>
-    </ThemeProvider>
 
     // <Grid container justifyContent='center'>
     //     <Grid xs={12} sm={9} md={6} lg={4.8} xl={3.5} className='login_div'>
@@ -132,7 +114,6 @@ const Loginform = (props) => {
     //     <p>아직 회원이 아니신가요? <Link onClick={()=>{navigate('/login/signup')}}>회원가입</Link></p>
     //     </Grid>
     // </Grid>
-    // </ThemeProvider>
   );
 };
 

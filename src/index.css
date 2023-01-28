@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+
+
 body {
   margin: 0;
-  /* font-family: 'Nanum Gothic', sans-serif; */
+  font-family: 'DM Sans', sans-serif;
   overflow: overlay;
 }
 
@@ -73,16 +76,16 @@ body {
   border-radius: 4px;
   margin-top: 16px;
 }
-/* .login_div a {
+.login_div a {
   text-decoration: none;
   color: #d34658;
   font-weight: 600;
-} */
-/* .login_div a:hover {
+}
+.login_div a:hover {
   text-decoration: underline;
   color: #d34658;
   cursor: pointer;
-} */
+}
 
 .kakao_login {
   width: 70%;
@@ -186,12 +189,22 @@ body {
 /* playbar */
 .playbar{
   width: 100%;
-  height: 100px;
+  height: 120px;
   background-color: #DBDFFD;
   position: fixed;
   bottom: 0;
-  /* display: flex;
-  flex-direction: row; */
-  /* justify-content: space-between;
-  text-align: center; */
+  padding-bottom: 15px;
+}
+
+.css-fdq1ma-MuiSlider-root {
+  height: 8px !important;
+}
+
+.playbutton > img {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.css-iyx866-MuiSlider-root {
+  height: 8px !important;
 }

@@ -1,58 +1,42 @@
 import React, { useState } from "react";
 import logo from "img/logo.png";
-import {
-  Avatar,
-  Grid,
-  Box,
-  AppBar,
-  Toolbar,
-  IconButton,
-  Typography,
-  InputBase,
-  Badge,
-  Menu,
-  MenuItem,
-} from "@mui/material";
-import { styled, alpha } from "@mui/material/styles";
-import {
-  AccountCircle,
-  Mail,
-  Notifications,
-  MoreVert,
-} from "@mui/icons-material";
-import SearchIcon from "@mui/icons-material/Search";
-import { useNavigate } from "react-router-dom";
-import { useCookies } from "react-cookie";
+import { InputAdornment, Input, Avatar, Grid, Box, AppBar, Toolbar, IconButton, Typography, InputBase, Badge, Menu, MenuItem } from '@mui/material';
+import { styled, alpha } from '@mui/material/styles';
+import { AccountCircle, Mail, Notifications, MoreVert } from '@mui/icons-material';
+import SearchIcon from '@mui/icons-material/Search';
+import { useNavigate } from 'react-router-dom';
+import { useCookies } from 'react-cookie';
+ 
 
-const Search = styled("div")(({ theme }) => ({
-  position: "relative",
-  borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.white, 0.15),
-  "&:hover": {
-    backgroundColor: alpha(theme.palette.common.white, 0.25),
-  },
-  marginRight: theme.spacing(2),
-  marginLeft: 0,
-  width: "100%",
-  [theme.breakpoints.up("sm")]: {
-    marginLeft: theme.spacing(3),
-    width: "auto",
-  },
-}));
-
-const SearchIconWrapper = styled("div")(({ theme }) => ({
-  padding: theme.spacing(0, 2),
-  height: "100%",
-  position: "absolute",
-  pointerEvents: "none",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
+const Search = styled('div')(({ theme }) => ({
+    position: 'relative',
+    backgroundColor: alpha(theme.palette.common.white, 0.75),
+    '&:hover': {
+      backgroundColor: alpha(theme.palette.common.white, 0.9),
+    },
+    borderRadius: "4px",
+    marginRight: theme.spacing(2),
+    marginLeft: 0,
+    width: '100%',
+    [theme.breakpoints.up('sm')]: {
+      marginLeft: theme.spacing(3),
+      width: 'auto',
+    },
+  }));
+  
+const SearchIconWrapper = styled('div')(({ theme }) => ({
+    padding: theme.spacing(0, 2),
+    height: '100%',
+    position: 'absolute',
+    pointerEvents: 'none',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
 }));
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: "inherit",
-  "& .MuiInputBase-input": {
+color: 'Black',
+'& .MuiInputBase-input': {
     padding: theme.spacing(1, 1, 1, 0),
     // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
@@ -82,50 +66,46 @@ const Topbar = () => {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar className="topbar" color="Primary1" position="static">
         <Toolbar>
-          <img
-            className="logo"
-            src={logo}
-            alt="React"
-            onClick={() => {
-              navigate("/main");
-            }}
-          />
-          <Box sx={{ flexGrow: 1 }} />
-          <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ "aria-label": "search" }}
-            />
-          </Search>
-          <Box sx={{ display: { xs: "none", md: "flex" } }}>
-            <IconButton
-              size="large"
-              aria-label="show 17 new notifications"
-              color="inherit"
-            >
-              <Badge badgeContent={17} color="error">
-                <Notifications />
-              </Badge>
-            </IconButton>
-          </Box>
-          <Box sx={{ display: { xs: "none", sm: "block" } }}>
-            <div className="menu_user_name" onClick={handleClickProfile}>
-              <IconButton
+            <img className="logo" src={logo} alt="React" onClick={()=>{navigate('/main')}}/>
+            <Box sx={{ flexGrow: 1, color: "#ffffff" }} />
+            <Search>
+                <SearchIconWrapper>
+                <SearchIcon color="Black"/>
+                </SearchIconWrapper>
+                <StyledInputBase 
+                // sx={{ backgroundColor: "rgba(255, 255, 255, 0.8)", borderRadius: "4px" }}
+                placeholder="Search…"
+                inputProps={{ 'aria-label': 'search' }}
+                />
+            </Search>
+            <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+                <IconButton
                 size="large"
                 aria-controls={open ? "account-menu" : undefined}
                 aria-haspopup="true"
                 aria-expanded={open ? "true" : undefined}
                 color="inherit"
-              >
-                <AccountCircle />
-              </IconButton>
-            </div>
-          </Box>
+                >
+                <Badge badgeContent={17} color="Red">
+                    <Notifications color="White"/>
+                </Badge>
+                </IconButton>
+            </Box>
+            <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+                <div className='menu_user_name' onClick={handleClickProfile}>
+                    <IconButton
+                        size="large"
+                        aria-controls={open ? 'account-menu' : undefined}
+                        aria-haspopup='true'
+                        aria-expanded={open ? 'true' : undefined}
+                        color="inherit"
+                    >
+                    <AccountCircle color="White"/>
+                    </IconButton>
+                </div>
+            </Box>
         </Toolbar>
       </AppBar>
       <Menu
