@@ -3,8 +3,7 @@ import { CircularProgress, Link, Button, Grid } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useNavigate } from "react-router-dom";
 import KakaoLogo from "img/kakao_logo.png";
-import * as dotenv from "dotenv";
-dotenv.config();
+require("dotenv").config();
 
 const theme = createTheme({
   palette: {
@@ -65,11 +64,8 @@ const Loginform = (props) => {
               </Button>
               <p>SNS 계정으로 간편하게 로그인하세요</p>
               <a
-                href={`https://kauth.kakao.com/oauth/authorize?client_id=${process.env.REST_API_KEY}&redirect_uri=${process.env.REDIRECT_URI}&response_type=code`}
+                href={`https://kauth.kakao.com/oauth/authorize?client_id=${process.env.REACT_APP_REST_API_KEY}&redirect_uri=${process.env.REACT_APP_REDIRECT_URI}&response_type=code`}
                 className="kakao_login"
-                onClick={() => {
-                  alert(process.env.REST_API_KEY, process.env.REDIRECT_URI);
-                }}
                 // onClick={props.kakaoLogin}
               >
                 <img src={KakaoLogo} alt="kakao logo" />

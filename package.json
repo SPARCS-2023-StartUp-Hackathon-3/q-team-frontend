@@ -47,7 +47,6 @@
     ]
   },
   "devDependencies": {
-    "@webpack-cli/generators": "^3.0.1",
     "react-app-rewired": "^2.2.1"
   }
 }
