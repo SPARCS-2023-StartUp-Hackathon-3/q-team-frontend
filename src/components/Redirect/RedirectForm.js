@@ -2,7 +2,8 @@ import axios from "axios";
 import { useSnackbar } from "notistack";
 import React, { useEffect } from "react";
 import { useCookies } from "react-cookie";
-import { useLocation, useNavigate, useParams } from "react-router";
+import { useLocation, useNavigate } from "react-router";
+require("dotenv").config();
 
 const RedirectForm = () => {
   const location = useLocation();
@@ -12,15 +13,37 @@ const RedirectForm = () => {
 
   // 카카오 로그인 로직
   useEffect(() => {
-    const kakaoToken = new URLSearchParams(location.search).get("code");
+    const authorizationCode = new URLSearchParams(location.search).get("code");
 
-    if (kakaoToken) {
+    if (authorizationCode) {
       (async () => {
+        const resWithToken = await axios
+          .post(
+            `https://kauth.kakao.com/oauth/token`,
+            {
+              grant_type: "authorization_code",
+              client_id: process.env.REACT_APP_REST_API_KEY,
+              redirect_uri: process.env.REACT_APP_REDIRECT_URI,
+              code: authorizationCode,
+            },
+            {
+              headers: {
+                "Content-Type":
+                  "application/x-www-form-urlencoded;charset=utf-8",
+              },
+            }
+          )
+          .then((res) => {
+            if (res.status === 200) return res;
+          })
+          .catch((err) => console.log(err));
+
         await axios
           .post(`${process.env.REACT_APP_SERVER}/api/auth/kakao/login`, {
-            accessToken: kakaoToken,
+            accessToken: resWithToken.data.access_token,
           })
           .then((res) => {
+            console.log(res);
             if (res.status === 201) {
               enqueueSnackbar("Surround에 오신 것을 환영합니다", {
                 variant: "info",
@@ -33,6 +56,9 @@ const RedirectForm = () => {
                 variant: "error",
               });
             }
+          })
+          .catch((Error) => {
+            console.log(Error);
           });
       })();
     }
