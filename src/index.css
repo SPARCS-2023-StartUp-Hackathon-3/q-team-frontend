@@ -109,6 +109,32 @@ body {
   left: 12.5%;
 }
 
+.kakao_login {
+  width: 70%;
+  height: 50px;
+  background-color: #fce84d;
+  position: relative;
+  margin-top: 16px;
+  border-radius: 4px;
+}
+.kakao_login > img {
+  width: 15px;
+  position: absolute;
+  left: 20%;
+  top: 49%;
+  transform: translate(0%, -50%);
+}
+.kakao_login > span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+}
+.kakao_login > img {
+  left: 12.5%;
+}
+
 /* signup */
 .signup_div {
   border-top: 8px solid #d34658;
