@@ -1,10 +1,15 @@
-import React from 'react';
-import { Onboardingform } from '../../components/onboarding';
+import React, { useEffect } from "react";
+import { useParams } from "react-router";
+
+import { Onboardingform } from "../../components/onboarding";
 
 const Onboarding = () => {
-  return (
-    <Onboardingform/>
-  )
+  const params = useParams();
+
+  useEffect(() => {
+    console.log(params);
+  }, []);
+  return <Onboardingform />;
 };
 
 export default Onboarding;
