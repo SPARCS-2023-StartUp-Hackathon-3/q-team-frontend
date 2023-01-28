@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import { useCookies } from 'react-cookie';
 import axios from "axios";
-import { Signupform } from '../../components/sign';
+import { Signupform } from 'components/sign';
 
 const Signup = () => {
   const [cookies, setCookie,] = useCookies(['loginkey']);
