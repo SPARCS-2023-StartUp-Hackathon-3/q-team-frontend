@@ -1,3 +1,4 @@
-import MyPage from "./MyPage";
+// export { default as MypageContainer } from './MypageContainer';
+import MypageContainer from "./MypageContainer";
 
-export default MyPage;
+export default MypageContainer;

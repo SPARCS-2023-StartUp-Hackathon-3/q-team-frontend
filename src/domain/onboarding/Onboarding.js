@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router";
 
-import { Onboardingform } from "../../components/onboarding";
+import { Onboardingform } from "components/onboarding";
 
 const Onboarding = () => {
   const params = useParams();
@@ -9,7 +9,7 @@ const Onboarding = () => {
   useEffect(() => {
     console.log(params);
   }, []);
-  return <Onboardingform />;
+  return (<Onboardingform />);
 };
 
 export default Onboarding;
