@@ -5,8 +5,8 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { RecoilRoot } from "recoil";
 import { BrowserRouter } from "react-router-dom";
-import { SnackbarProvider } from 'notistack';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { SnackbarProvider } from "notistack";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { NoEncryptionGmailerrorred } from "@mui/icons-material";
 
 const theme = createTheme({
@@ -43,25 +43,21 @@ const theme = createTheme({
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <RecoilRoot>
-        <SnackbarProvider 
-            maxSnack={1} 
-            anchorOrigin={
-              {
-                vertical: 'bottom',
-                horizontal: 'left',
-              }
-            }
-            >
-            <ThemeProvider theme={theme}>
-              <App />
-            </ThemeProvider>
-        </SnackbarProvider>
-      </RecoilRoot>
-    </BrowserRouter>
-  </React.StrictMode>
+  <BrowserRouter>
+    <RecoilRoot>
+      <SnackbarProvider
+        maxSnack={1}
+        anchorOrigin={{
+          vertical: "bottom",
+          horizontal: "left",
+        }}
+      >
+        <ThemeProvider theme={theme}>
+          <App />
+        </ThemeProvider>
+      </SnackbarProvider>
+    </RecoilRoot>
+  </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function
