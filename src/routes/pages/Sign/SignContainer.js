@@ -1,8 +1,8 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { Login, SignUp } from '../../../domain/sign';
+import { Login, SignUp } from 'domain/sign';
 
-const sign = () => {
+const SignContainer = () => {
   return (
     <Routes>
         <Route path = "/" element={<Login/>}/>
@@ -11,4 +11,4 @@ const sign = () => {
   )
 };
 
-export default sign;
+export default SignContainer;
