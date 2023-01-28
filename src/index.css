@@ -13,7 +13,7 @@ body {
   min-height: 700px;
   background-color: gainsboro;
   border-radius: 20px;
-  box-shadow: 0px 6px 15.8px rgba(75, 75, 75, 0.23); 
+  box-shadow: 0px 6px 15.8px rgba(75, 75, 75, 0.23);
 }
 .sign_info {
   margin-top: 100px;
@@ -27,66 +27,125 @@ body {
   margin-top: 60px;
 }
 
- /* login */
- .login_div { 
-  border-top: 8px solid #D34658;
+/* login */
+.login_div {
+  border-top: 8px solid #d34658;
   border-radius: 20px;
-  background-color: white; 
-  box-shadow: 0px 6px 15.8px rgba(75, 75, 75, 0.23); 
-  min-height: 700px; 
-  text-align: center; 
-  padding-top: 50px; 
+  background-color: white;
+  box-shadow: 0px 6px 15.8px rgba(75, 75, 75, 0.23);
+  min-height: 700px;
+  text-align: center;
+  padding-top: 50px;
   padding-bottom: 50px;
   display: flex;
   flex-direction: column !important;
   align-items: center;
 }
-.login_div > img { width: 120px; }
-.login_div > h1 { font-size: 28px; margin-top: 32px; margin-bottom: 72px; }
-.login_div > p { font-size: 15px; margin-top: 32px; margin-bottom: 24px; }
-.login_div > input { 
+.login_div > img {
+  width: 120px;
+}
+.login_div > h1 {
+  font-size: 28px;
+  margin-top: 32px;
+  margin-bottom: 72px;
+}
+.login_div > p {
+  font-size: 15px;
+  margin-top: 32px;
+  margin-bottom: 24px;
+}
+.login_div > input {
   font-size: 14px;
-  width: 70%; 
+  width: 70%;
   height: 50px;
-  box-sizing: border-box; 
-  margin-bottom: 16px; 
+  box-sizing: border-box;
+  margin-bottom: 16px;
   padding-left: 10px;
-  border: 1px #DADADA solid; 
+  border: 1px #dadada solid;
   border-radius: 4px;
 }
-.login_div > input:focus {outline: 2px solid #D34658;}
-.login_button { 
-  width: 70%; 
+.login_div > input:focus {
+  outline: 2px solid #d34658;
+}
+.login_button {
+  width: 70%;
   height: 50px;
   border-radius: 4px;
   margin-top: 16px;
 }
-.login_div a { text-decoration: none; color: #D34658; font-weight: 600;}
-.login_div a:hover { text-decoration: underline; color: #D34658; cursor: pointer; }
+.login_div a {
+  text-decoration: none;
+  color: #d34658;
+  font-weight: 600;
+}
+.login_div a:hover {
+  text-decoration: underline;
+  color: #d34658;
+  cursor: pointer;
+}
 
-.kakao_login { 
-  width: 70%; 
+.kakao_login {
+  width: 70%;
   height: 50px;
-  background-color: #FCE84D; 
-  position: relative; 
+  background-color: #fce84d;
+  position: relative;
+  margin-top: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.kakao_login > img {
+  width: 15px;
+  position: absolute;
+  left: 20%;
+  top: 49%;
+  transform: translate(0%, -50%);
+}
+.kakao_login > span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+}
+.kakao_login > img {
+  left: 12.5%;
+}
+
+.kakao_login {
+  width: 70%;
+  height: 50px;
+  background-color: #fce84d;
+  position: relative;
   margin-top: 16px;
   border-radius: 4px;
 }
-.kakao_login > img { width: 15px; position: absolute; left: 20%; top: 49%; transform: translate(0%, -50%); }
-.kakao_login > span { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); white-space: nowrap;}
-.kakao_login > img { left: 12.5%;}
-
-
+.kakao_login > img {
+  width: 15px;
+  position: absolute;
+  left: 20%;
+  top: 49%;
+  transform: translate(0%, -50%);
+}
+.kakao_login > span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+}
+.kakao_login > img {
+  left: 12.5%;
+}
 
 /* signup */
-.signup_div { 
-  border-top: 8px solid #D34658; 
+.signup_div {
+  border-top: 8px solid #d34658;
   border-radius: 20px;
-  background-color: white; 
-  box-shadow: 0px 6px 15.8px rgba(75, 75, 75, 0.23); 
-  min-height: 700px; 
-  text-align: center; 
-  padding-top: 50px; 
+  background-color: white;
+  box-shadow: 0px 6px 15.8px rgba(75, 75, 75, 0.23);
+  min-height: 700px;
+  text-align: center;
+  padding-top: 50px;
   padding-bottom: 50px;
 }
 .signup_input > input {
@@ -104,7 +163,14 @@ body {
   border: 1px #D34658 solid;
   border-radius: 4px;
   margin-top: 16px;
-
 }
-.signup_div a { text-decoration: none; color: #D34658; font-weight: 600;}
-.signup_div a:hover { text-decoration: underline; color: #D34658; cursor: pointer; }
+.signup_div a {
+  text-decoration: none;
+  color: #d34658;
+  font-weight: 600;
+}
+.signup_div a:hover {
+  text-decoration: underline;
+  color: #d34658;
+  cursor: pointer;
+}
