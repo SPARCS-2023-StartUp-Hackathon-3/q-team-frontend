@@ -73,16 +73,16 @@ body {
   border-radius: 4px;
   margin-top: 16px;
 }
-.login_div a {
+/* .login_div a {
   text-decoration: none;
   color: #d34658;
   font-weight: 600;
-}
-.login_div a:hover {
+} */
+/* .login_div a:hover {
   text-decoration: underline;
   color: #d34658;
   cursor: pointer;
-}
+} */
 
 .kakao_login {
   width: 70%;
@@ -181,4 +181,17 @@ body {
   margin-right:50px;
   margin-bottom:10px;
   cursor: pointer;
+}
+
+/* playbar */
+.playbar{
+  width: 100%;
+  height: 100px;
+  background-color: #DBDFFD;
+  position: fixed;
+  bottom: 0;
+  /* display: flex;
+  flex-direction: row; */
+  /* justify-content: space-between;
+  text-align: center; */
 }

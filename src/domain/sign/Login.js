@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 import { Loginform } from 'components/sign';
-import { Topbar } from 'components/layout';
+import { Playbar, Topbar } from 'components/layout';
 
 const Login = () => {
   const { enqueueSnackbar } = useSnackbar();
@@ -59,6 +59,7 @@ const Login = () => {
           handleChangeLogin={handleChangeLogin}
           handleClickLogin={handleClickLogin}
       />
+      <Playbar/>
     </>
   );
 };
