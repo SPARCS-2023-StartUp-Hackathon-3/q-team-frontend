@@ -182,3 +182,16 @@ body {
   margin-bottom:10px;
   cursor: pointer;
 }
+
+/* playbar */
+.playbar{
+  width: 100%;
+  height: 100px;
+  background-color: #DBDFFD;
+  position: fixed;
+  bottom: 0;
+  /* display: flex;
+  flex-direction: row; */
+  /* justify-content: space-between;
+  text-align: center; */
+}
