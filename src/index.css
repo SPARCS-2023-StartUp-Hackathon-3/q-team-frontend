@@ -237,3 +237,17 @@ body {
 .menudivider{
   margin: 10px !important;
 }
+
+/* post */
+
+.PostInfo h1{ margin: 0px; font-size: 16px; }
+.PostInfo h2{ margin: 0px; font-size: 16px; color: #646FD4; font-weight: lighter; padding-left: 5px; }
+.PostInfo h3{ margin: 0px; font-size: 16px; color: #999999; font-weight: lighter; }
+.PostInfo p { margin: 0px; font-size: 16px; font-weight: lighter; }
+
+.musiccard:hover{
+  box-shadow: 0px 3px 5px rgba(75, 75, 75, 0.23);
+}
+
+.musiccard h1{ margin: 0px; font-size: 18px; }
+.musiccard h2{ margin: 0px; font-size: 14px; color: #999999; font-weight: lighter; }

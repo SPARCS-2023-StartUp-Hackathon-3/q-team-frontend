@@ -1,50 +1,48 @@
 import * as React from "react";
-import Box from "@mui/material/Box";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import PlayArrowIcon from "@mui/icons-material/PlayArrow";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import RepeatIcon from "@mui/icons-material/Repeat";
-import { Paper, Skeleton } from "@mui/material";
+import { Box, Card, CardContent, CardMedia, IconButton, Typography, Paper, Skeleton } from "@mui/material";
+import { PlayArrowRounded, FavoriteRounded, RepeatRounded, ChatBubbleRounded }from "@mui/icons-material";
+import icon_HeartOutlined from "img/icon_HeartOutlined.png";
 
 const MusicCard = () => {
   return (
-    <Card sx={{ display: "flex", width: "100%" }}>
-      <Skeleton sx={{ width: 151 }} style={{ margin: 1 }} />
-      <Box sx={{ display: "flex", flexDirection: "column" }}>
-        <CardContent sx={{ flex: "1 0 auto" }}>
-          <Typography component="div" variant="h5">
-            Live From Space
-          </Typography>
-          <Typography
-            variant="subtitle1"
-            color="text.secondary"
-            component="div"
-          >
-            Mac Miller
-          </Typography>
+    <Card className="musiccard" sx={{ display: "flex", width: "auto", backgroundColor: "#ffffff", boxShadow: "none", margin: "10px" }}>
+      {/* <Skeleton sx={{ width: 151 }} /> */}
+      <CardMedia
+        component="img"
+        sx={{ width: 151 }}
+        image="/static/images/cards/live-from-space.jpg"
+        alt="Live from space album cover"
+      />
+      <Box sx={{ flex: "1 0 auto" }}>
+        <CardContent sx={{ flex: "1 0 auto", display: "flex", flexDirection: "row", justifyContent: "space-between"}}>
+          <div>
+            <h1>Wrapped around your finger</h1>
+            <h2>Post Malon</h2>
+          </div>
+          <div>
+            <img src={icon_HeartOutlined} alt="icon_HeartOutlined" style={{height: "50%"}} />
+          </div>
         </CardContent>
 
-        <Paper sx={{ display: "flex", alignItems: "center", pl: 1, pb: 1 }}>
+        <Box sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1 }}>
           <IconButton>
-            <PlayArrowIcon />
-            <Typography>160K</Typography>
+            <PlayArrowRounded color="Gray4" sx={{ fontSize: 22 }}/>
+            <Typography sx={{ fontSize: 14 }}>160K</Typography>
           </IconButton>
           <IconButton>
-            <FavoriteIcon />
-            <Typography>1,300</Typography>
+            <FavoriteRounded color="Gray4" sx={{ fontSize: 14, marginRight: "5px" }}/>
+            <Typography sx={{ fontSize: 14 }}>1,300</Typography>
           </IconButton>
           <IconButton>
-            <RepeatIcon />
-            <Typography>480</Typography>
+            <RepeatRounded color="Gray4" sx={{ fontSize: 14, marginRight: "5px"  }}/>
+            <Typography sx={{ fontSize: 14 }}>480</Typography>
           </IconButton>
           <IconButton>
-            <Typography>34K</Typography>
+            <ChatBubbleRounded color="Gray4" sx={{ fontSize: 14, marginRight: "5px"  }}/>
+            <Typography sx={{ fontSize: 14 }}>34K</Typography>
           </IconButton>
-        </Paper>
+        </Box>
+
       </Box>
     </Card>
   );

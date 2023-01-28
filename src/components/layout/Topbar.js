@@ -68,7 +68,7 @@ const Topbar = () => {
   };
 
   return (
-    <Box sx={{ width: "100%" }}>
+    <Box sx={{ width: "100%", zIndex: "1"}}>
       <AppBar className="topbar" color="Primary1" position="static">
         <Toolbar>
           <img

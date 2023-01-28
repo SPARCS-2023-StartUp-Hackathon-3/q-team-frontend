@@ -1,44 +1,36 @@
 import * as React from "react";
-import Card from "@mui/material/Card";
-import CardHeader from "@mui/material/CardHeader";
-import CardContent from "@mui/material/CardContent";
-import CardActions from "@mui/material/CardActions";
-import Avatar from "@mui/material/Avatar";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import { red } from "@mui/material/colors";
-import ChatBubbleIcon from "@mui/icons-material/ChatBubble";
-import RepeatIcon from "@mui/icons-material/Repeat";
+import { Card, CardHeader, CardContent, CardActions, Avatar, IconButton, Typography } from "@mui/material";
+import { RepeatRounded, ChatBubbleRounded }from "@mui/icons-material";
 import { MusicCard } from ".";
 
 const Post = () => {
   return (
-    <Card sx={{ maxWidth: 345 }}>
-      <CardHeader
-        avatar={
-          <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-            R
-          </Avatar>
-        }
-        title="Shrimp and Chorizo Paella"
-        subheader="September 14, 2016"
-      />
-      <CardContent>
-        <Typography variant="body2" color="text.secondary">
-          This impressive paella is a perfect party dish and a fun meal to cook
-          together with your guests. Add 1 cup of frozen peas along with the
-          mussels, if you like.
-        </Typography>
-      </CardContent>
+    <Card sx={{ Width: "100%", backgroundColor: "#F8F8F8", boxShadow: "none"}}>
+      <div style={{ display: "flex", flexDirection: "row", margin: "20px", alignItems: "center"}}>
+        <Avatar sx={{ width: 45, height: 45 }} src={null}/>
+        <div className = "PostInfo" style={{ marginLeft: "20px"}}>
+          <div style={{ display: "flex", flexDirection: "row", }}>
+            <h1>Post Malone</h1>
+            <h2>@ImMalone</h2> 
+            <h3>・6 hours ago</h3>
+          </div>
+          <p>This track is legit INSANE!</p>
+        </div>
+      </div>
+
       <MusicCard />
+
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
-          <ChatBubbleIcon />
+          <ChatBubbleRounded color="Primary1" sx={{ fontSize: 24, marginRight: "5px" }}/>
+          <Typography>258</Typography>
         </IconButton>
         <IconButton aria-label="share">
-          <RepeatIcon />
+          <RepeatRounded color="Primary1" sx={{ fontSize: 24, marginRight: "5px" }}/>
+          <Typography>88</Typography>
         </IconButton>
       </CardActions>
+
     </Card>
   );
 };
