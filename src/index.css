@@ -18,10 +18,10 @@ body {
 .sign_info {
   margin-top: 100px;
   margin-left: 30px;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: bold;
 }
-.sign_info > div {
+.sign_info > h3 {
   margin-top: 60px;
 }
 
@@ -35,6 +35,9 @@ body {
   text-align: center; 
   padding-top: 50px; 
   padding-bottom: 50px;
+  display: flex;
+  flex-direction: column !important;
+  align-items: center;
 }
 .login_div > img { width: 120px; }
 .login_div > h1 { font-size: 28px; margin-top: 32px; margin-bottom: 72px; }
@@ -42,7 +45,7 @@ body {
 .login_div > input { 
   font-size: 14px;
   width: 70%; 
-  height: 45px;
+  height: 50px;
   box-sizing: border-box; 
   margin-bottom: 16px; 
   padding-left: 10px;
@@ -52,12 +55,26 @@ body {
 .login_div > input:focus {outline: 2px solid #D34658;}
 .login_button { 
   width: 70%; 
-  height: 45px;
+  height: 50px;
   border-radius: 4px;
   margin-top: 16px;
 }
 .login_div a { text-decoration: none; color: #D34658; font-weight: 600;}
 .login_div a:hover { text-decoration: underline; color: #D34658; cursor: pointer; }
+
+.kakao_login { 
+  width: 70%; 
+  height: 50px;
+  background-color: #FCE84D; 
+  position: relative; 
+  margin-top: 16px;
+  border-radius: 4px;
+}
+.kakao_login > img { width: 15px; position: absolute; left: 20%; top: 49%; transform: translate(0%, -50%); }
+.kakao_login > span { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); white-space: nowrap;}
+.kakao_login > img { left: 12.5%;}
+
+
 
 /* signup */
 .signup_div { 

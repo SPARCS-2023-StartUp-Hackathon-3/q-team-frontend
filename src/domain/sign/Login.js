@@ -1,6 +1,6 @@
 import React,{ useState } from 'react';
 import { useSnackbar } from 'notistack';
-import { Loginform } from '../../components/sign';
+import { Loginform } from 'components/sign';
 import { useCookies } from 'react-cookie';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
