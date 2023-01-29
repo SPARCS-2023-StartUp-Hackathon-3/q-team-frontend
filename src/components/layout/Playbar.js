@@ -130,6 +130,7 @@ const Playbar = () => {
                 alt="pausebutton_3"
                 style={{ height: "100%", cursor: "pointer" }}
                 onClick={async () => {
+                  audioNode.current.src = null;
                   setIsPlaying(false);
                 }}
               />
