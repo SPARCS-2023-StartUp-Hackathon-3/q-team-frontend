@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { Grid } from '@mui/material';
-import { Mainform } from "components/main";
+import { Feedform } from "components/main";
 import { Topbar, Playbar, Menu, RightSection } from "components/layout";
 
 const Feed = () => {
+
+  const [writePost, setWritePost] = useState({
+    contents: "",
+    musicfiles: "",
+  });
+
+  const handleChangeWritePost = (event) => {
+    let changeWritePost = { ...writePost };
+    changeWritePost[event.target.name] = event.target.value;
+    setWritePost(changeWritePost);
+  };
+
   return (
     <Grid container justifyContent="center" alignItems="center">
       <Topbar item xs={12} md={12} xl={12} />
@@ -12,7 +24,10 @@ const Feed = () => {
           <Menu />
         </Grid>
         <Grid item xs={7} md={7} xl={7}>
-          <Mainform />
+          <Feedform 
+            writePost={writePost}
+            handleChangeWritePost={handleChangeWritePost}
+          />
         </Grid>
         <Grid item xs={3} md={3} xl={3}>
           <RightSection />

@@ -1,6 +1,6 @@
 import React from "react";
 import { Grid } from "@mui/material";
-import { DefaultMypageform, MyFeedform } from "components/myPage";
+import { DefaultMypageform, MyFeedform } from "components/mypage";
 import { Topbar, Playbar, Menu, RightSection } from "components/layout";
 
 const MyFeed = () => {

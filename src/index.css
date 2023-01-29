@@ -251,3 +251,24 @@ body {
 
 .musiccard h1{ margin: 0px; font-size: 18px; }
 .musiccard h2{ margin: 0px; font-size: 14px; color: #999999; font-weight: lighter; }
+
+.writepost::placeholder{
+  font-size: 24px;
+}
+
+.writepost::-webkit-input-placeholder {
+  color: red;
+  font-style: italic;
+}
+.writepost:-ms-input-placeholder {
+  color: red;
+  font-style: italic;
+}
+.writepost::-webkit-input-placeholder {
+  color: blue;
+  font-weight: bold;
+}
+.writepost:-ms-input-placeholder {
+  color: blue;
+  font-weight: bold;
+}
