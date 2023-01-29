@@ -1,15 +1,39 @@
-import { Card, Divider, Tab, Tabs } from "@mui/material";
+import { Card, Tab, Tabs } from "@mui/material";
 import { Box } from "@mui/system";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+
+import TabContext from "@mui/lab/TabContext";
+import TabList from "@mui/lab/TabList";
+import TabPanel from "@mui/lab/TabPanel";
 import { Post, WritePost } from "components/common";
-import { TabContext, TabList, TabPanel } from "@mui/lab";
+import { useCookies } from "react-cookie";
+import axios from "axios";
+require("dotenv").config();
 
 const Feedform = (props) => {
+  const [cookies, setCookies] = useCookies();
+  const [feeds, setFeeds] = useState([]);
+
   const [selectedTab, setSelectedTab] = useState("0");
 
   const handleChange = (event, newValue) => {
     setSelectedTab(newValue);
   };
+
+  useEffect(() => {
+    // 전체 api 조회
+    (async () => {
+      const res = await axios.get(`${process.env.REACT_APP_SERVER}/api/feeds`, {
+        headers: {
+          Authorization: `Bearer ${cookies.loginkey}`,
+        },
+      });
+
+      if (res.status === 200) setFeeds(res.data);
+
+      console.log(res);
+    })();
+  }, []);
 
   return (
     <Box sx={{ width: "100%", typography: "body1" }}>
@@ -22,21 +46,24 @@ const Feedform = (props) => {
         </Box>
         <TabPanel value="0">
           {/* 글 쓰기 란 */}
-          <WritePost 
+          <WritePost
             writePost={props.writePost}
             handleChangeWritePost={props.handleChangeWritePost}
           />
-          <br/>
+          <br />
           {/* 글 아이템 */}
-          <Post />
-          <br/>
-          <Post />
+          {feeds.map((feed, key) => (
+            <div key={key}>
+              <Post feed={feed} />
+              <br />
+            </div>
+          ))}
         </TabPanel>
 
         <TabPanel value="1">Item Two</TabPanel>
       </TabContext>
     </Box>
-  )
+  );
 };
 
 export default Feedform;

@@ -29,11 +29,11 @@ const Login = () => {
         password: login.password,
       })
       .then((res) => {
-        if (res.status === 200) {
+        if (res.status.toString().startsWith("2")) {
           enqueueSnackbar("Surround에 오신 것을 환영합니다", {
             variant: "info",
           });
-          setCookie("loginkey", res.data.Id, { path: "/" });
+          setCookie("loginkey", res.data.accessToken, { path: "/" });
           // setCookie("name", res.data.Name, { path: "/" });
           navigate("/");
         } else {

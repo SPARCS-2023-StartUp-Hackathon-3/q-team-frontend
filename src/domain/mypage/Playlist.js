@@ -1,6 +1,6 @@
 import React from "react";
 import { Grid } from "@mui/material";
-import { DefaultMypageform, Playlistform } from "components/mypage";
+import { DefaultMypageform, Playlistform } from "components/myPage";
 import { Topbar, Playbar, Menu, RightSection } from "components/layout";
 
 const Playlist = () => {
