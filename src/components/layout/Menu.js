@@ -20,7 +20,7 @@ const Menu = () => {
 
       <ListItem style={{ marginTop: "70px", marginBottom: "70px" , display: "flex", flexDirection: "column"}}>
         <div style={{ display: "flex", flexDirection: "row", alignItems: "center"}}>
-          <Avatar sx={{ width: 60, height: 60 }} src={cookies.profile}/>
+          <Avatar sx={{ width: 60, height: 60 }} src={cookies.profile} onClick={()=>{navigate("/mypage")}}/>
           <br/>
           <div style={{ marginLeft: "10px" }}>
             <div style={{ color: '#999999', fontSize: "18px" }}>Good Morning,</div>

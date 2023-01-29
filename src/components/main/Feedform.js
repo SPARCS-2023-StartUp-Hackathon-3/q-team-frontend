@@ -1,11 +1,8 @@
-import { Card, Divider, Tab } from "@mui/material";
+import { Card, Divider, Tab, Tabs } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useState } from "react";
-
-import TabContext from "@mui/lab/TabContext";
-import TabList from "@mui/lab/TabList";
-import TabPanel from "@mui/lab/TabPanel";
 import { Post, WritePost } from "components/common";
+import { TabContext, TabList, TabPanel } from "@mui/lab";
 
 const Feedform = (props) => {
   const [selectedTab, setSelectedTab] = useState("0");
@@ -17,12 +14,12 @@ const Feedform = (props) => {
   return (
     <Box sx={{ width: "100%", typography: "body1" }}>
       <TabContext value={selectedTab}>
-        <Card sx={{ borderBottom: 1, borderColor: "divider" }}>
-          <TabList onChange={handleChange} aria-label="lab API tabs example">
-            <Tab label="For you" value="0" />
-            <Tab label="Tracks" value="1" />
-          </TabList>
-        </Card>
+      <Box sx={{ height: "60px", borderBottom: 2, borderColor: "#F2F4FF", boxSizing: 'border-box' }}>
+      <Tabs variant="fullWidth" value={selectedTab} textColor="inherit" indicatorColor="primary" onChange={handleChange} aria-label="lab API tabs example">
+            <Tab className="tab" label="For you" value="0" />
+            <Tab className="tab" label="Tracks" value="1" />
+          </Tabs>
+        </Box>
         <TabPanel value="0">
           {/* 글 쓰기 란 */}
           <WritePost 

@@ -78,12 +78,12 @@ body {
 }
 .login_div a {
   text-decoration: none;
-  color: #d34658;
+  color: #000000;
   font-weight: 600;
 }
 .login_div a:hover {
   text-decoration: underline;
-  color: #d34658;
+  color: #000000;
   cursor: pointer;
 }
 
@@ -256,19 +256,6 @@ body {
   font-size: 24px;
 }
 
-.writepost::-webkit-input-placeholder {
-  color: red;
-  font-style: italic;
-}
-.writepost:-ms-input-placeholder {
-  color: red;
-  font-style: italic;
-}
-.writepost::-webkit-input-placeholder {
-  color: blue;
-  font-weight: bold;
-}
-.writepost:-ms-input-placeholder {
-  color: blue;
-  font-weight: bold;
+.tab{
+  height: 60px;
 }
