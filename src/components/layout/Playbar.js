@@ -9,8 +9,11 @@ import playbutton_2 from "img/playbutton_2.png";
 import playbutton_3 from "img/playbutton_3.png";
 import playbutton_4 from "img/playbutton_4.png";
 import playbutton_5 from "img/playbutton_5.png";
+import pausebutton_3 from "img/pausebutton_3.png";
 import axios from "axios";
 import { useCookies } from "react-cookie";
+import { useRecoilState } from "recoil";
+import { isPlayingAtom } from "domain/recoil/playingAtom";
 require("dotenv").config();
 
 const CustomizedSlider = styled(Slider)(
@@ -34,6 +37,7 @@ color: ${theme.palette.Primary2.main};
 const Playbar = () => {
   const [cookies, _] = useCookies(["loginkey"]);
   const [audio, setAudio] = useState("");
+  const [isPlaying, setIsPlaying] = useRecoilState(isPlayingAtom);
   const audioNode = useRef();
 
   return (
@@ -45,24 +49,6 @@ const Playbar = () => {
         alignItems="center"
         spacing={2}
       >
-        <button
-          onClick={async () => {
-            const res = await axios.get(
-              `${process.env.REACT_APP_SERVER}/api/songs/download?title=wildflower`,
-              {
-                headers: {
-                  Authorization: `Bearer ${cookies.loginkey}`,
-                },
-                responseType: "blob",
-              }
-            );
-            const blob = new Blob([res.data], { type: "audio/mpeg" });
-            setAudio(URL.createObjectURL(blob));
-          }}
-        >
-          음악 요청
-        </button>
-        ;
         <audio
           controls
           src={audio}
@@ -138,11 +124,37 @@ const Playbar = () => {
               alt="playbutton_2"
               style={{ height: "70%" }}
             />
-            <img
-              src={playbutton_3}
-              alt="playbutton_3"
-              style={{ height: "100%" }}
-            />
+            {isPlaying ? (
+              <img
+                src={pausebutton_3}
+                alt="pausebutton_3"
+                style={{ height: "100%", cursor: "pointer" }}
+                onClick={async () => {
+                  setIsPlaying(false);
+                }}
+              />
+            ) : (
+              <img
+                src={playbutton_3}
+                alt="playbutton_3"
+                style={{ height: "100%", cursor: "pointer" }}
+                onClick={async () => {
+                  const res = await axios.get(
+                    `${process.env.REACT_APP_SERVER}/api/songs/download?title=wildflower`,
+                    {
+                      headers: {
+                        Authorization: `Bearer ${cookies.loginkey}`,
+                      },
+                      responseType: "blob",
+                    }
+                  );
+                  const blob = new Blob([res.data], { type: "audio/mpeg" });
+                  setAudio(URL.createObjectURL(blob));
+                  setIsPlaying(true);
+                }}
+              />
+            )}
+
             <img
               src={playbutton_4}
               alt="playbutton_4"
